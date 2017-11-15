@@ -5,13 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
+  <meta name="description" content="博客管理">
   <meta name="author" content="Bigsharpen">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="清水无言"/>
-  <meta property="og:description" content="do what i want to do" />
+  <meta property="og:title" content="hexo使用博客的一些心得"/>
+  <meta property="og:description" content="博客管理" />
   <meta property="og:site_name" content="清水无言"/>
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
   <meta property="og:image" content="http://yoursite.com"/>
   
     <link rel="alternate" href="/atom.xml" title="清水无言" type="application/atom+xml">
@@ -35,8 +35,7 @@
 </head>
 
   <body>
-    <!-- Archive Header -->
-<!-- Page Header -->
+    <!-- Page Header -->
 
 
 <header class="site-header header-background" style="background-image: url(/img/default-banner-light.jpg)">
@@ -44,7 +43,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">Blog Archives</p>
+          <p class="title">hexo使用博客的一些心得</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -89,74 +88,58 @@
   </div>
 </header>
 
-<!-- Archive List -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      
-        <div class="archive-item">
-  <a href="/2017/11/05/blogTips/" class="post-title">
-    hexo使用博客的一些心得
-  </a>
-  <div class="date text-muted">Posted on 2017-11-05 12:30:44</div>
-</div>
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By Bigsharpen</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2017-11-05</span>
+            <span class="time">13:13:33</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
 
-      
-        <div class="archive-item">
-  <a href="/2017/11/05/Js高程/" class="post-title">
-    JavaScript高级程序设计
-  </a>
-  <div class="date text-muted">Posted on 2017-11-05 12:30:44</div>
-</div>
+<a href="/categories/使用心得/">使用心得</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
 
-      
-        <div class="archive-item">
-  <a href="/2017/11/05/Angular/" class="post-title">
-    Angular
-  </a>
-  <div class="date text-muted">Posted on 2017-11-05 12:25:44</div>
-</div>
+<a class="tag" href="/tags/感悟/">#感悟</a> <a class="tag" href="/tags/记录/">#记录</a>
 
-      
-        <div class="archive-item">
-  <a href="/2017/11/05/gulp插件/" class="post-title">
-    gulp插件
-  </a>
-  <div class="date text-muted">Posted on 2017-11-05 12:04:44</div>
-</div>
 
-      
-        <div class="archive-item">
-  <a href="/2017/11/05/主流框架/" class="post-title">
-    主流框架
-  </a>
-  <div class="date text-muted">Posted on 2017-11-05 12:04:44</div>
-</div>
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <pre><code>最近在研究用hexo搭建博客以及日常管理博客的一些技巧，从无到有的过程中，自己也找了很多资料，参考了很多博文，这里总结了一下用到的技巧，一来用作自己备忘记录，二来也希望可以帮到跟我有同样问题而在找寻答案的你。
+</code></pre><h3 id="文章标题，发布日期，标签和分类等的设置"><a href="#文章标题，发布日期，标签和分类等的设置" class="headerlink" title="文章标题，发布日期，标签和分类等的设置"></a>文章标题，发布日期，标签和分类等的设置</h3><ul>
+<li>在md文件的开头加入如下片段<br><pre><code></code></pre></li>
+</ul>
+<hr>
+<p>title: hexo使用博客的一些心得 #文章標題<br>date: 2017-011-05 12:30:44 #文章生成時間<br>categories: “使用心得” #文章分類目錄 可以省略<br>tags: #文章標籤 可以省略</p>
+<pre><code>- 感悟
+- 记录
+</code></pre><h2 id="description-博客管理-你對本頁的描述-可以省略"><a href="#description-博客管理-你對本頁的描述-可以省略" class="headerlink" title="description: 博客管理 #你對本頁的描述 可以省略"></a>description: 博客管理 #你對本頁的描述 可以省略</h2><p></p>
+<h3 id="设置预览正文"><a href="#设置预览正文" class="headerlink" title="设置预览正文"></a>设置预览正文</h3><ul>
+<li>在文章中插入<br><pre><code><br>&lt;感叹号– more –&gt;<br></code></pre><br>在此占格符前的文章将会在预览中展示</li>
+</ul>
 
-      
-        <div class="archive-item">
-  <a href="/2017/11/05/面向对象1/" class="post-title">
-    面向对象
-  </a>
-  <div class="date text-muted">Posted on 2017-11-05 12:04:44</div>
-</div>
-
-      
-
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<!-- Pagination -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-10 col-md-10 col-md-offset-1">
-      <ul class="pagination">
-          
-          
-      </ul>
-    </div>
-  </div>
-</div>
+</article>
 
 
 
