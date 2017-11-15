@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="js的学习笔记">
+  <meta name="author" content="Bigsharpen">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="JavaScript高级程序设计"/>
+  <meta property="og:description" content="js的学习笔记" />
+  <meta property="og:site_name" content="清水无言"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http://yoursite.com"/>
+  
+    <link rel="alternate" href="/atom.xml" title="清水无言" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>清水无言</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-light.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">JavaScript高级程序设计</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/Bigsharpen">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:<your-email-address>">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By Bigsharpen</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2017-11-05</span>
+            <span class="time">12:37:37</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/学习笔记/">学习笔记</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/感悟/">#感悟</a> <a class="tag" href="/tags/记录/">#记录</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <h1 id="JavaScript高级程序设计笔记"><a href="#JavaScript高级程序设计笔记" class="headerlink" title="JavaScript高级程序设计笔记"></a>JavaScript高级程序设计笔记</h1><h2 id="（一）简介"><a href="#（一）简介" class="headerlink" title="（一）简介"></a>（一）简介</h2><ul>
+<li>js是一种专门为与网页交互而设计的脚本语言</li>
+<li>一个完整的Js实现由三部份组成<ul>
+<li>核心（ECMAScript）</li>
+<li>文档对象模型（DOM）</li>
+<li>浏览器对象模型（BOM）</li>
+</ul>
+</li>
+<li>ECMAScript是一套语言的规定，js实现了ECMAScript<br>  -所有浏览器大体支持ES3，对ES5的支持程度越来越高</li>
+<li>DOM是针对XML但经过扩展用于HTML的API<ul>
+<li>DOM把整个页面映射为一个多层节点结构</li>
+</ul>
+</li>
+<li>BOM从根本上讲只处理浏览器窗口和框架</li>
+</ul>
+<h2 id="（二）在HTML中使用JS"><a href="#（二）在HTML中使用JS" class="headerlink" title="（二）在HTML中使用JS"></a>（二）在HTML中使用JS</h2><h3 id="2-1"><a href="#2-1" class="headerlink" title="2.1"></a>2.1</h3><ul>
+<li>&lt;//script&gt;按照他们在页面中出现的先后顺序依次被解析（在不使用defer和async属性的情况下）</li>
+<li>带有src属性的&lt;//script&gt;元素标签对之间不应该再有额外的js代码，因为会被忽略</li>
+<li>现代Web开发一般把&lt;//script&gt;标签放在body元素中页面内容的后面，以缩短浏览器显示空白窗口的时间</li>
+<li>用文档类型（DOCTYPE）来切换浏览器的两种模式：混杂模式和标准模式</li>
+</ul>
+<h2 id="（三）基本概念"><a href="#（三）基本概念" class="headerlink" title="（三）基本概念"></a>（三）基本概念</h2><h3 id="3-1"><a href="#3-1" class="headerlink" title="3.1"></a>3.1</h3><ul>
+<li>语法：大量借鉴了c语言及其他类c语言</li>
+<li>区分大小写：变量，函数，操作符都区分大小写</li>
+<li>标识符： 变量，函数，属性的名字或者函数的参数<ul>
+<li>第一个字符必须是字母，下划线或美元符号</li>
+<li>其他字符可以是字母，下划线，美元符号，数字</li>
+<li>采用驼峰大小写：第一个字母小写，剩下的每个单词的首字母大写</li>
+</ul>
+</li>
+<li><p>注释：</p>
+<ul>
+<li>单行注释：以两个斜杠开头  //单行注释</li>
+<li>多行注释以一个斜杠和一个星号开头，以一个星号和一个斜杠结尾  <pre><code>
+/*
+*这是一个
+*多行注释
+*/
+  </code></pre>
+</li>
+</ul>
+</li>
+<li><p>严格模式：”use strict”</p>
+<h3 id="3-3变量"><a href="#3-3变量" class="headerlink" title="3.3变量"></a>3.3变量</h3></li>
+<li>ECMAscript的变量是松散类型的，可以保存任何类型的数据</li>
+<li>可以可以在修改变量值的同时修改变量的类型，但不推荐这么做</li>
+<li>用var操作符定义的变量将成为该变量作用域中的局部变量，退出作用域之后就会销毁</li>
+<li>省略var操作符可以直接创建一个全局变量–不推荐这么做，给没有声明的变量赋值，在严格模式下会出错<h3 id="3-4数据类型"><a href="#3-4数据类型" class="headerlink" title="3.4数据类型"></a>3.4数据类型</h3></li>
+<li>ECMAscript中有五种简单的数据类型：undefined，null，boolean，number，string</li>
+<li>还有一种复杂的数据类型：object</li>
+<li>typeof检测变量数据类型<ul>
+<li>通常：简单数据类型的值返回该类型</li>
+<li>特殊：对象或者null，会返回object ；函数返回function</li>
+</ul>
+</li>
+<li>undefined类型：使用var声明但未初始化的变量值就是undefined<ul>
+<li>对未声明和未初始化的变量执行typeof都返回undefined</li>
+</ul>
+</li>
+<li>null类型：从逻辑角度看表示一个空对象指针<ul>
+<li>undefined值派生自null，所以null==undefined  返回true</li>
+<li>定义对象时应该初始化为null</li>
+</ul>
+</li>
+<li>boolean类型：两个值true，false<ul>
+<li>True和False都不是boolean值，只是标识符</li>
+<li>任何类型的数据调用Boolean函数总会返回一个Boolean值</li>
+</ul>
+</li>
+<li>number类型：整数和浮点数<ul>
+<li>最基本的格式是十进制</li>
+<li>还可以用八进制和十六进制表示</li>
+<li>八进制必须以0开头，字面值的数值不得超过7，否则将被当作十进制解析</li>
+<li>十六进制的前两位必须是0x</li>
+<li>浮点数：数值中必须包含一个小数点，并且小数点后面必须有一位数字<ul>
+<li>由于保存浮点数需要的空间是整数的两倍，所以ECMAscript会不失时机的将浮点数转换为整数来保存</li>
+</ul>
+</li>
+<li>极大或极小的数值可以用e表示法</li>
+<li>浮点数值的最高精度为17位，进行计算时精确度远不如整数，0.1+0.2=0.3000000000000004</li>
+<li>因此永远不要测试某个特定浮点数值</li>
+<li>NAN：任何涉及NAN的操作都会返回NAN，NAN与任何值都不相等，包括本身<br>-数值转换：Number（），parseInt（），parseFloat（）；</li>
+</ul>
+<ul>
+<li>Number()函数可用于任何数据类型</li>
+<li>parseInt()和parseFloat()专门用于把字符串转换为数值<ul>
+<li>parseInt()可以指定第二个参数，说明进制如 8 ，16</li>
+<li>parseFloat()只能解析十进制数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>String类型：用于表示由0个或者多个16位Unicode字符组成的字符序列，即字符串，可以由单引号或双引号表示<ul>
+<li>转换为字符串：number.toString();</li>
+<li>数值，布尔值，对象，和字符串值都有一个toString（）方法，但null和undefined没有</li>
+<li>任何字符串都可以通过其length属性获取长度，如果包含双字节字符可能会导致不精确</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="个人的笔记">
+  <meta name="author" content="Bigsharpen">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="Angular"/>
+  <meta property="og:description" content="个人的笔记" />
+  <meta property="og:site_name" content="清水无言"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http://yoursite.com"/>
+  
+    <link rel="alternate" href="/atom.xml" title="清水无言" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>清水无言</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-light.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">Angular</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/Bigsharpen">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:<your-email-address>">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By Bigsharpen</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2017-11-05</span>
+            <span class="time">12:37:37</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/笔记/">笔记</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/技术/">#技术</a> <a class="tag" href="/tags/工具/">#工具</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <h1 id="Angular"><a href="#Angular" class="headerlink" title="Angular"></a>Angular</h1><h3 id="hash-路径"><a href="#hash-路径" class="headerlink" title="hash(路径)"></a>hash(路径)</h3><ul>
+<li>location对象（关于地址的信息）</li>
+<li><code>http://localhost:63342/a%E6%88%91%E7%9A%84%E5%A4%A7%E5%89%8D%E7%AB%AF/%E4%B8%BB%E6%B5%81%E6%A1%86%E6%9E%B6/Angular/index.html#pig</code><ul>
+<li>（URL）地址解析：<ul>
+<li>hostname:localhost</li>
+<li>host:localhost:63342</li>
+<li>port:63342（端口）</li>
+<li>pathname:/a%E6%88%91%E7%9A%84%E5%A4%A7%E5%89%8D%E7%AB%AF/%E4%B8%BB%E6%B5%81%E6%A1%86%E6%9E%B6/Angular/index.html</li>
+<li>hash:#pig(锚点)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>带领当前市面上的框架走向模式化</li>
+<li>核心特性<ul>
+<li>mvc</li>
+<li>模块化</li>
+<li>自动化双向数据绑定</li>
+<li>指令系统</li>
+</ul>
+</li>
+<li>ng-app 是ng的入口，让ng管理下面的代码<h3 id="简单实例"><a href="#简单实例" class="headerlink" title="简单实例"></a>简单实例</h3></li>
+<li>当网页加载完毕，angular自动开始执行</li>
+<li>html页面中的ng-xxx称为angula的指令（Directive）</li>
+<li>ng-model是双向数据绑定指令，将当前元素的value属性和模型中的user.name建立绑定关系</li>
+<li>表达式将该标签的innerHTML和user.name建立绑定关系<h3 id="使用总结"><a href="#使用总结" class="headerlink" title="使用总结"></a>使用总结</h3></li>
+<li>最大程度上减少了页面上的DOM操作</li>
+<li>让js专注业务逻辑</li>
+<li>代码结构更合理</li>
+<li>维护成本更低<h3 id="CDN-内容分发网络"><a href="#CDN-内容分发网络" class="headerlink" title="CDN(内容分发网络)"></a>CDN(内容分发网络)</h3></li>
+<li>快</li>
+<li>节省自己服务器的带宽压力和流量<h3 id="mvc（是一种应用程序的开发思想）"><a href="#mvc（是一种应用程序的开发思想）" class="headerlink" title="mvc（是一种应用程序的开发思想）"></a>mvc（是一种应用程序的开发思想）</h3></li>
+<li>将应用程序的组成划分为三个部分<ul>
+<li>model模型：存储数据</li>
+<li>view视图：展示数据</li>
+<li>controller控制器：初始化模型（模型和视图之间的桥梁）<h3 id="module模块"><a href="#module模块" class="headerlink" title="module模块"></a>module模块</h3></li>
+</ul>
+</li>
+<li>用angula.module创建一个模块</li>
+</ul>
+<h3 id="controller控制器"><a href="#controller控制器" class="headerlink" title="controller控制器"></a>controller控制器</h3><ul>
+<li>依托于某个模块</li>
+<li>第一个参数是名字，第二个参数的函数</li>
+<li>函数的参数是固定的例如$scope,$http,因为是根据参数名来传递特定的对象</li>
+<li>主要职责<ul>
+<li>为应用中的模型设置初始状态</li>
+<li>通过$scope对象把数据模型或者函数行为暴露给视图</li>
+<li>监视模型的变化，做出相应的动作</li>
+</ul>
+</li>
+</ul>
+<h3 id="view视图"><a href="#view视图" class="headerlink" title="view视图"></a>view视图</h3><h3 id="scope"><a href="#scope" class="headerlink" title="$scope"></a>$scope</h3><ul>
+<li>视图和控制器之间的桥梁</li>
+<li>用于视图和控制器传递数据</li>
+<li>用于暴露数据</li>
+</ul>
+<h3 id="用a标签解析url"><a href="#用a标签解析url" class="headerlink" title="用a标签解析url"></a>用a标签解析url</h3><p><pre><code><br>    var url=’<a href="http://tieba.baidu.com/f/index/forumpark?cn=%E6%B8%AF%E5%8F%B0%E4%B8%9C%E5%8D%97%E4%BA%9A%E6%98%8E%E6%98%9F&amp;ci=0&amp;pcn=%E5%A8%B1%E4%B9%90%E6%98%8E%E6%98%9F&amp;pci=0&amp;ct=1&amp;rn=20&amp;pn=1" target="_blank" rel="external">http://tieba.baidu.com/f/index/forumpark?cn=%E6%B8%AF%E5%8F%B0%E4%B8%9C%E5%8D%97%E4%BA%9A%E6%98%8E%E6%98%9F&amp;ci=0&amp;pcn=%E5%A8%B1%E4%B9%90%E6%98%8E%E6%98%9F&amp;pci=0&amp;ct=1&amp;rn=20&amp;pn=1</a>‘;<br>    var aLink = document.createElement(‘a’);<br>    aLink.href = url;<br>    console.log(aLink.search);<br>    console.log(aLink.pathname);<br></code></pre></p>
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><ul>
+<li>data-ng-app 标记angular的应用范围<ul>
+<li>会自动执行范围内的ng指令</li>
+<li>标记的范围应该尽可能小，以提高性能</li>
+<li>一般一个页面只有一个ng-app</li>
+<li>创建多个ng-app节点时，默认只能执行第一个，后面的需要手动执行，通过angular.bootstrap</li>
+</ul>
+</li>
+<li>ng-bind<ul>
+<li>ng-bind在绑定值包含html值时会转义成普通字符直接输出（for safe）</li>
+</ul>
+</li>
+<li>ng-cloak 处理表达式再加载时露出源码的问题</li>
+<li>ng-show/hide 决定显示和隐藏</li>
+<li>ng-if 决定是否存在</li>
+<li>ng-src和ng-href 解决将url以ng变量的方式传入的时候，因为ng没有加载进来时，出现的错误。</li>
+<li>事件指令：<blockquote>
+<p><img src="https://i.imgur.com/rfbATQG.png" alt="ngzhiling"></p>
+<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2></blockquote>
+</li>
+<li></li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
