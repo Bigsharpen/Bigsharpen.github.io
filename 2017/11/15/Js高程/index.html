@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="一些个人的笔记">
+  <meta name="author" content="Bigsharpen">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="JavaScript高级程序设计摘要"/>
+  <meta property="og:description" content="一些个人的笔记" />
+  <meta property="og:site_name" content="清水无言"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http://yoursite.com"/>
+  
+    <link rel="alternate" href="/atom.xml" title="清水无言" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <!-- Site Title -->
+  <title>清水无言</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-light.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">JavaScript高级程序设计摘要</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  首页
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/Bigsharpen">
+                  
+                  我的Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:<your-email-address>">
+                  
+                  我的邮箱
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By Bigsharpen</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2017-11-15</span>
+            <span class="time">11:49:31</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/笔记/">笔记</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/感悟/">#感悟</a> <a class="tag" href="/tags/记录/">#记录</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <h1 id="JavaScript高级程序设计笔记"><a href="#JavaScript高级程序设计笔记" class="headerlink" title="JavaScript高级程序设计笔记"></a>JavaScript高级程序设计笔记</h1><h2 id="（一）简介"><a href="#（一）简介" class="headerlink" title="（一）简介"></a>（一）简介</h2><ul>
+<li>js是一种专门为与网页交互而设计的脚本语言</li>
+<li>一个完整的Js实现由三部份组成<ul>
+<li>核心（ECMAScript）</li>
+<li>文档对象模型（DOM）</li>
+<li>浏览器对象模型（BOM）</li>
+</ul>
+</li>
+<li>ECMAScript是一套语言的规定，js实现了ECMAScript<ul>
+<li>所有浏览器大体支持ES3，对ES5的支持程度越来越高</li>
+</ul>
+</li>
+<li>DOM是针对XML但经过扩展用于HTML的API<ul>
+<li>DOM把整个页面映射为一个多层节点结构</li>
+</ul>
+</li>
+<li>BOM从根本上讲只处理浏览器窗口和框架<a id="more"></a>
+<h2 id="（二）在HTML中使用JS"><a href="#（二）在HTML中使用JS" class="headerlink" title="（二）在HTML中使用JS"></a>（二）在HTML中使用JS</h2><h3 id="2-1"><a href="#2-1" class="headerlink" title="2.1"></a>2.1</h3></li>
+<li>&lt;//script&gt;按照他们在页面中出现的先后顺序依次被解析（在不使用defer和async属性的情况下）</li>
+<li>带有src属性的&lt;//script&gt;元素标签对之间不应该再有额外的js代码，因为会被忽略</li>
+<li>现代Web开发一般把&lt;//script&gt;标签放在body元素中页面内容的后面，以缩短浏览器显示空白窗口的时间</li>
+<li>用文档类型（DOCTYPE）来切换浏览器的两种模式：混杂模式和标准模式</li>
+</ul>
+<h2 id="（三）基本概念"><a href="#（三）基本概念" class="headerlink" title="（三）基本概念"></a>（三）基本概念</h2><h3 id="3-1"><a href="#3-1" class="headerlink" title="3.1"></a>3.1</h3><ul>
+<li>语法：大量借鉴了c语言及其他类c语言</li>
+<li>区分大小写：变量，函数，操作符都区分大小写</li>
+<li>标识符： 变量，函数，属性的名字或者函数的参数<ul>
+<li>第一个字符必须是字母，下划线或美元符号</li>
+<li>其他字符可以是字母，下划线，美元符号，数字</li>
+<li>采用驼峰大小写：第一个字母小写，剩下的每个单词的首字母大写</li>
+</ul>
+</li>
+<li><p>注释：</p>
+<ul>
+<li>单行注释：以两个斜杠开头  //单行注释</li>
+<li>多行注释以一个斜杠和一个星号开头，以一个星号和一个斜杠结尾  <pre><code>
+/*
+*这是一个
+*多行注释
+*/
+  </code></pre>
+</li>
+</ul>
+</li>
+<li><p>严格模式：”use strict”</p>
+<h3 id="3-3变量"><a href="#3-3变量" class="headerlink" title="3.3变量"></a>3.3变量</h3></li>
+<li>ECMAscript的变量是松散类型的，可以保存任何类型的数据</li>
+<li>可以在修改变量值的同时修改变量的类型，但不推荐这么做</li>
+<li>用var操作符定义的变量将成为该变量作用域中的局部变量，退出作用域之后就会销毁</li>
+<li>省略var操作符可以直接创建一个全局变量–不推荐这么做，给没有声明的变量赋值，在严格模式下会出错<h3 id="3-4数据类型"><a href="#3-4数据类型" class="headerlink" title="3.4数据类型"></a>3.4数据类型</h3></li>
+<li>ECMAscript中有五种简单的数据类型：undefined，null，boolean，number，string</li>
+<li>还有一种复杂的数据类型：object</li>
+<li>typeof检测变量数据类型<ul>
+<li>通常：简单数据类型的值返回该类型</li>
+<li>特殊：对象或者null，会返回object ；函数返回function</li>
+</ul>
+</li>
+<li>undefined类型：使用var声明但未初始化的变量值就是undefined<ul>
+<li>对未声明和未初始化的变量执行typeof都返回undefined</li>
+</ul>
+</li>
+<li>null类型：从逻辑角度看表示一个空对象指针<ul>
+<li>undefined值派生自null，所以null==undefined  返回true</li>
+<li>定义对象时应该初始化为null</li>
+</ul>
+</li>
+<li>boolean类型：两个值true，false<ul>
+<li>区分大小写，所以True和False都不是boolean值，只是标识符</li>
+<li>任何类型的数据调用Boolean函数总会返回一个Boolean值</li>
+</ul>
+</li>
+<li>number类型：整数和浮点数<ul>
+<li>最基本的格式是十进制</li>
+<li>还可以用八进制和十六进制表示</li>
+<li>八进制必须以0开头，字面值的数值不得超过7，否则将被当作十进制解析</li>
+<li>十六进制的前两位必须是0x</li>
+<li>浮点数：数值中必须包含一个小数点，并且小数点后面必须有一位数字<ul>
+<li>由于保存浮点数需要的空间是整数的两倍，所以ECMAscript会不失时机的将浮点数转换为整数来保存</li>
+</ul>
+</li>
+<li>极大或极小的数值可以用e表示法</li>
+<li>浮点数值的最高精度为17位，进行计算时精确度远不如整数，0.1+0.2=0.3000000000000004</li>
+<li>因此永远不要测试某个特定浮点数值</li>
+<li>NAN：任何涉及NAN的操作都会返回NAN，NAN与任何值都不相等，包括本身</li>
+</ul>
+</li>
+<li>数值转换：Number（），parseInt（），parseFloat（）；<ul>
+<li>Number()函数可用于任何数据类型<ul>
+<li><img src="https://i.imgur.com/G1l0BEc.png" alt=""></li>
+</ul>
+</li>
+<li>parseInt()和parseFloat()专门用于把字符串转换为数值（字符串里找数字）<ul>
+<li><img src="https://i.imgur.com/4uUbWPr.png" alt=""></li>
+<li>parseInt()可以指定第二个参数，说明进制如 8 ，16</li>
+<li>parseFloat()只能解析十进制数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>String类型：用于表示由0个或者多个16位Unicode字符组成的字符序列，即字符串，可以由单引号或双引号表示<ul>
+<li>转换为字符串：number.toString();</li>
+<li>数值，布尔值，对象，和字符串值都有一个toString（）方法，但null和undefined没有</li>
+<li>任何字符串都可以通过其length属性获取长度，如果包含双字节字符可能会导致不精确</li>
+</ul>
+</li>
+<li>object类型：一组数据和功能的集合<ul>
+<li>默认有toString （）返回对象的字符串表示，和valueOf（）方法返回对象的字符串，数值或布尔值表示<h3 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h3></li>
+</ul>
+</li>
+<li>一元操作符：前置操作符（++a,–a）和后置操作符(a++,a–)，加减操作符<ul>
+<li>前置操作符：变量的值都是在语句被求值以前改变的</li>
+<li>后置操作符:变量的值都是在语句被求值之改变的</li>
+<li>加减操作符：可以像number()函数一样对非数值型数据进行转换<h3 id="位操作符"><a href="#位操作符" class="headerlink" title="位操作符"></a>位操作符</h3></li>
+</ul>
+</li>
+<li>整数以纯二进制的格式存储</li>
+<li>负数使用二进制的补码存储<ul>
+<li>计算方法：<img src="https://i.imgur.com/5YTWmPW.png" alt=""></li>
+</ul>
+</li>
+<li>按位非（~）<ul>
+<li>返回数值的反码：即操作数的负值减一，由于是最底层的操作，速度更快</li>
+</ul>
+</li>
+<li>按位与(&amp;)<ul>
+<li>同则取1，异则取0</li>
+</ul>
+</li>
+<li>按位或(OR)<ul>
+<li>同0取0，其他取1</li>
+</ul>
+</li>
+<li>按位异或(XOR)<ul>
+<li>同则取0，异则取1<br>加性操作符：</li>
+</ul>
+</li>
+<li><img src="https://i.imgur.com/6SvvyxU.png" alt=""><h3 id="相等操作符"><a href="#相等操作符" class="headerlink" title="相等操作符"></a>相等操作符</h3></li>
+<li>进行转换后相等</li>
+<li>比较的是值<br><img src="https://i.imgur.com/ljjWgpd.png" alt=""><h3 id="全等操作符"><a href="#全等操作符" class="headerlink" title="全等操作符"></a>全等操作符</h3></li>
+<li>完全相等</li>
+<li>比较的是值和类型<h3 id="break语句和continue语句"><a href="#break语句和continue语句" class="headerlink" title="break语句和continue语句"></a>break语句和continue语句</h3></li>
+<li>break语句是直接退出这一层循环</li>
+<li>continue语句是截断本次循环，直接开始下一次循环<h3 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h3></li>
+<li>ECMAScript是用一个数组来表示参数的，因此他不在乎传入多少个参数，以及参数的类型，函数接收到的永远是这个数组</li>
+<li>在函数体内可以通过arguments对象来访问这个参数数组</li>
+<li>也可以用arguments[0],arguments[1]来获取每一个参数</li>
+<li>ECMAScript函数没有重载，如果定义的函数名相同，函数名只属于后定义的函数</li>
+<li>但是可以通过检查传入的参数的数量和类型并做出不同的反应，来模拟重载</li>
+</ul>
+<h2 id="（四）变量，作用域和内存问题"><a href="#（四）变量，作用域和内存问题" class="headerlink" title="（四）变量，作用域和内存问题"></a>（四）变量，作用域和内存问题</h2><ul>
+<li>js变量松散的本质决定了它只是在特定时间用于保存特定值的一个名字而已<h3 id="4-1-基本类型和引用类型的值"><a href="#4-1-基本类型和引用类型的值" class="headerlink" title="4.1 基本类型和引用类型的值"></a>4.1 基本类型和引用类型的值</h3></li>
+<li>基本类型的值指的是简单的数据段</li>
+<li>引用类型值值得是那些可能由多个值构成的对象<ul>
+<li>引用类型的值可以为其添加，改变和删除属性和方法</li>
+<li>包含引用类型值得变量实际上包含的不是对象本身，而是指向对象的一个指针</li>
+<li>当从一个变量向另一个变量复制引用类型的值时，两个变量实际上指向同一个对象，改变其中一个变量，都会改变那个对象，从而影响到另一个变量（new方法才会创建一个新对象）</li>
+</ul>
+</li>
+<li>向函数传递参数实际上就是值的复制和引用的复制<ul>
+<li>复制的值改变不会影响原来的值</li>
+<li>而复制的引用改变会影响原对象</li>
+</ul>
+</li>
+<li>确定一个值是哪种基本类型可以使用typeof操作符，确定一个值是那种引用类型可以使用instanceof操作符<h3 id="执行环境及作用域"><a href="#执行环境及作用域" class="headerlink" title="执行环境及作用域"></a>执行环境及作用域</h3></li>
+<li>Web浏览器的全局执行环境是window对象，因此所有的全局变量和函数都是作为window的对象的属性和方法创建的</li>
+<li>某个执行环境的所有的代码执行完毕后，该环境被销毁，其中所有的变量和函数也被销毁</li>
+<li>全局执行环境知道关闭网页或者退出浏览器才会销毁，是最外围的环境</li>
+<li>每个函数都有自己的执行环境，但代码在一个环境中执行时，会创建一个作用域链</li>
+<li>作用域链的用途是保证（对执行环境有权访问的）所有变量和函数的有序访问</li>
+<li>函数中作用域链的前端是它自己的变量对象（包含arguments对像），最后一个变量是全局执行环境的变量</li>
+<li>作用域链示意图：<blockquote>
+<p><img src="https://i.imgur.com/inERIIx.png" alt=""></p>
+</blockquote>
+</li>
+<li>没有块级作用域<blockquote>
+<p><img src="https://i.imgur.com/cyno3Us.png" alt=""><br>for循环结束后变量i并没有销毁，还可以使用</p>
+<h4 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h4></blockquote>
+</li>
+<li>使用var声明的变量会自动添加到最近的环境中</li>
+<li>如果声明时没有用var声明，会自动添加到全局环境<h4 id="查询标识符（通常是找变量）"><a href="#查询标识符（通常是找变量）" class="headerlink" title="查询标识符（通常是找变量）"></a>查询标识符（通常是找变量）</h4></li>
+<li><p><img src="https://i.imgur.com/HK6geVv.png" alt=""></p>
+</li>
+<li><p><img src="https://i.imgur.com/9hnM97P.png" alt=""></p>
+</li>
+<li>这里调用函数需要使用变量color，首先在函数getColor内找，找不到再沿着作用域链来到全局环境找到全局变量color，如果在函数内有一个同名的color变量，那么将停止寻找，返回函数的局部变量color<h5 id="因此访问局部变量的速度比访问全局变量要高"><a href="#因此访问局部变量的速度比访问全局变量要高" class="headerlink" title="因此访问局部变量的速度比访问全局变量要高"></a>因此访问局部变量的速度比访问全局变量要高</h5>##垃圾收集</li>
+<li>js具有自动垃圾回收机制，执行环境会负责管理代码执行过程中使用的内存</li>
+<li>垃圾收集器会周期性的找出不再使用的变量，释放其内存</li>
+<li>清除垃圾的两个策略<ul>
+<li>标记清除（主流的垃圾收集算法）：当变量进入环境时将其标记为‘进入环境’，当变量离开环境时将其标记为‘离开环境’<ul>
+<li>它会去掉环境中的变量以及被环境中的变量引用的变量的标记，此后再被加上标记的变量将被视为准备删除的变量</li>
+<li>最后完成清楚工作，销毁那些带标记的变量</li>
+</ul>
+</li>
+<li>引用计数<ul>
+<li>当值被引用一次视为引用次数+1，当其引用次数为0时，说明没有办法访问这个值了，因此可以将其删除</li>
+<li>有一个问题:循环引用时，会出现引用次数一直不为0，无法清除的现象<ul>
+<li><img src="https://i.imgur.com/zisRtl3.png" alt=""></li>
+<li>解决办法：手动断开js对象和DOm元素的链接</li>
+<li><img src="https://i.imgur.com/Qn5UX5P.png" alt=""><h3 id="管理内存"><a href="#管理内存" class="headerlink" title="管理内存"></a>管理内存</h3></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>执行代码时，只保存必要的数据</li>
+<li>数据不再引用将其值设为null（解除引用）—适用于大多数全局变量和全局对象的属性</li>
+<li>局部变量会在它们离开执行环境时自动解除</li>
+</ul>
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><ul>
+<li>JSON是一种数据格式而不是一种编程语言<h3 id="20-1-语法支持以下三种类型的值"><a href="#20-1-语法支持以下三种类型的值" class="headerlink" title="20.1 语法支持以下三种类型的值"></a>20.1 语法支持以下三种类型的值</h3></li>
+<li>简单值：可以在JSON中表示字符串（必须使用双引号），数值，布尔值，和null</li>
+<li>对象：JSON要求给属性加双引号，没有变量也没有分号</li>
+<li>数组 ：JSON数组没有变量也没有分号<h3 id="20-2解析与序列化"><a href="#20-2解析与序列化" class="headerlink" title="20.2解析与序列化"></a>20.2解析与序列化</h3></li>
+<li>JSON的优势是：JSON数据结构可以解析为有用的js对象</li>
+<li>JSON对象有两个方法：<ul>
+<li>stringify():把对象序列化为JSON字符串，该方法有两个参数<ul>
+<li>第一个参数是过滤器：可以是数组或函数，数组表示结果中只包含数组中列出的属性</li>
+<li>第二个参数用来控制结果中的缩进和空白符，只要传入有效的控制缩进的参数，结果字符串就会包含换行符</li>
+</ul>
+</li>
+<li>parse()：把JSON字符串解析为原生js值<h2 id="AJAX与Comet"><a href="#AJAX与Comet" class="headerlink" title="AJAX与Comet"></a>AJAX与Comet</h2></li>
+</ul>
+</li>
+<li>ajax技术的核心是XMLHttpRequest对象（XHR）</li>
+<li>XHR为向服务器发送请求和解析服务器响应提供了流畅度的接口，能够以异步的方式从服务器获取更多的信息</li>
+<li>虽然名字包含XML，但ajax通信与数据与格式无关，无需刷新页面即可从服务器获取数据<h3 id="XHR用法"><a href="#XHR用法" class="headerlink" title="XHR用法"></a>XHR用法</h3></li>
+<li>使用XHR对象，要调用的第一个方法是open（），它接受三个参数：要发送的请求类型，请求的URL和是否异步发送请求的（true表示异步）<ul>
+<li>例如：xhr.open(“get”,”example.php”,false)</li>
+<li>调用open（）方法并不会真正发送请求，只是启动一个请求以备发送</li>
+</ul>
+</li>
+<li>要发送特定的请求，必须调用send()方法<ul>
+<li>xhr.send(null);send的参数表示要发送的数据，如果不需要发送数据则必须传入null</li>
+</ul>
+</li>
+<li>响应<ul>
+<li>responseText:作为响应主体被返回的文本</li>
+<li>responseXML:如果响应的类型是“text/xml”或“application/xml”这个属性将保存着响应数据的XML DOM文档</li>
+<li>status:响应的HTTP状态</li>
+<li>statusText：HTTP状态的说明</li>
+</ul>
+</li>
+<li>收到响应后<ol>
+<li>检查status属性：是否为200（表示responseText属性的内容准备就绪）</li>
+<li>用onreadystatechange事件检测对象的readyState属性取值有（0，1，2，3，4），我们只关心值为4时，因为此时表示所有数据准备就绪<br> <img src="https://i.imgur.com/HjIkcop.png" alt=""></li>
+</ol>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
