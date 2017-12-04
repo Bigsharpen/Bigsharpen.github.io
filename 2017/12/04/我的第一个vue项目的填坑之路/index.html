@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="一些个人的笔记">
+  <meta name="author" content="Bigsharpen">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="我的第一个vue项目的填坑之路"/>
+  <meta property="og:description" content="一些个人的笔记" />
+  <meta property="og:site_name" content="清水无言"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http://yoursite.com"/>
+  
+    <link rel="alternate" href="/atom.xml" title="清水无言" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <!-- Site Title -->
+  <title>清水无言</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-light.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">我的第一个vue项目的填坑之路</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  首页
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/about">
+                  
+                  About
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/Bigsharpen">
+                  
+                  我的Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:<your-email-address>">
+                  
+                  我的邮箱
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By Bigsharpen</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2017-12-04</span>
+            <span class="time">19:44:27</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/笔记/">笔记</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/感悟/">#感悟</a> <a class="tag" href="/tags/记录/">#记录</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <h1 id="我的第一个vue项目的填坑之路"><a href="#我的第一个vue项目的填坑之路" class="headerlink" title="我的第一个vue项目的填坑之路"></a>我的第一个vue项目的填坑之路</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p>[TOC]</p>
+<h2 id="mock数据"><a href="#mock数据" class="headerlink" title="mock数据"></a>mock数据</h2><ul>
+<li>&emsp;&emsp;因为看的教程用的是老版本的vue-cli，早期的vue-lic下面有dev-server.js和dev-client.js两文件，请求本地数据在dev-server.js里配置，最新的vue-webpack-template 中已经去掉了dev-server.js和dev-client.js 改用webpack.dev.conf.js代替，所以 配置本地访问在webpack.dev.conf.js里配置即可。</li>
+<li><p>这是遇到的第一个拦路虎，最后解决方法如下：</p>
+<ul>
+<li>在webpack.dev.conf.js下</li>
+<li>第一步：在<img src="https://i.imgur.com/JxPPUB8.png" alt=""></li>
+<li><p>之后插入如下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">   const express = require(&apos;express&apos;) //引入express</span><br><span class="line">   const app = express()//创建一个本地服务器</span><br><span class="line">   var appData = require(&apos;../data.json&apos;) //加载本地数据文件</span><br><span class="line">   var seller = appData.seller //获取对应的本地数据</span><br><span class="line">   var goods = appData.goods</span><br><span class="line">   var ratings = appData.ratings</span><br><span class="line">   var apiRoutes = express.Router()//创建一个api路由</span><br><span class="line">   app.use(&apos;/api&apos;, apiRoutes)&lt;/code&gt;&lt;/pre&gt;</span><br><span class="line">- 第二步：在devServer里面添加如下代码</span><br><span class="line">   before(app) &#123;</span><br><span class="line">     app.get(&apos;/api/seller&apos;, (req, res) =&gt; &#123;</span><br><span class="line">         res.json(&#123;</span><br><span class="line">           errno: 0,</span><br><span class="line">           data: seller</span><br><span class="line">         &#125;) //接口返回json数据，上面配置的数据seller就赋值给data请求后调用</span><br><span class="line">       &#125;),</span><br><span class="line">       app.get(&apos;/api/goods&apos;, (req, res) =&gt; &#123;</span><br><span class="line">         res.json(&#123;</span><br><span class="line">           errno: 0,</span><br><span class="line">           data: goods</span><br><span class="line">         &#125;)</span><br><span class="line">       &#125;),</span><br><span class="line">       app.get(&apos;/api/ratings&apos;, (req, res) =&gt; &#123;</span><br><span class="line">         res.json(&#123;</span><br><span class="line">           errno: 0,</span><br><span class="line">           data: ratings</span><br><span class="line">         &#125;)</span><br><span class="line">       &#125;)</span><br><span class="line">   &#125;,</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>一定记得加最后的逗号，这个小细节让我郁闷了好久</p>
+<h2 id="vue-添加过渡动画效果"><a href="#vue-添加过渡动画效果" class="headerlink" title="vue-添加过渡动画效果"></a>vue-添加过渡动画效果</h2></li>
+</ul>
+</li>
+<li><p>&emsp;&emsp;新版本的vue提供了<transition></transition>组件,在想要做动画的盒子外面套上这个组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;transition&gt;</span><br><span class="line">    &lt;div class=&apos;cart-list&apos;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">&lt;/transition&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加如下样式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.cart-list</span><br><span class="line">		position: absolute</span><br><span class="line">		top: 0</span><br><span class="line">		left: 0</span><br><span class="line">		z-index: -1</span><br><span class="line">		width: 100%</span><br><span class="line">		transform: translate3d(0, -100%, 0) // 动画的最终状态及动画结束之后的状态</span><br><span class="line">		&amp;.fold-enter-active, &amp;.fold-leave-active</span><br><span class="line">			transition: all .5s // 变化的元素和动画持续的时间</span><br><span class="line">		&amp;.fold-enter, &amp;.fold-leave-active // 动画开始时的状态</span><br><span class="line">			transform: translate3d(0, 0, 0)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="better-scroll插件的使用"><a href="#better-scroll插件的使用" class="headerlink" title="better-scroll插件的使用"></a>better-scroll插件的使用</h2><ul>
+<li>首先在组件的script部分引入better-scroll包<br><code>import BScroll from &#39;better-scroll&#39;;</code></li>
+<li><p>然后实例化,并调用$nextTick()方法，更新数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">this.$nextTick(() =&gt; &#123;</span><br><span class="line">    this.cartListScroll = new BScroll(this.$refs.listContent, &#123;&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这里要说明一下两点</p>
+<ol>
+<li><code>$nextTick()</code>方法，因为vue实际上是异步更新队列的，当滚动之后数据并没有同步更新，所以要在数据变化之后立即使用<code>$nextTick()</code>,这样回调函数就会在DOM更新后调用</li>
+<li><p>vue中操作DOM元素或子组件,在子组件或dom节点上添加ref</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ref=&quot;mao&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>该节点或子组件的引用信息将会注册在父组件$refs上，就可以通过如下方式调用节点或子组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$refs.mao</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
